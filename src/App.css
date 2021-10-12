@@ -62,7 +62,7 @@ header img {
 }
 
 .center img {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .search {
@@ -138,27 +138,10 @@ input[type="text"] {
 }
 
 .content-back {
-  background: #ef3a2a;
+  background: rgb(236, 28, 35);
   color: white;
   padding: 20px;
   transform: rotateY(180deg);
-}
-
-.favoritbtn {
-  background: linear-gradient(
-    90deg,
-    rgba(252, 239, 245, 1) 0%,
-    rgba(243, 227, 243, 1) 25%,
-    rgba(230, 225, 247, 1) 50%,
-    rgba(229, 233, 245, 1) 75%,
-    rgba(229, 235, 242, 1) 100%
-  );
-  padding: 10px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  color: #464545;
-  font-weight: 500;
 }
 
 .content li {
@@ -234,7 +217,7 @@ nav ul {
   font-weight: 600;
 }
 .nav__menu-item button:focus-within {
-  background-color: #ef3a2a;
+  background-color: rgb(236, 28, 35);
   color: white;
 }
 
