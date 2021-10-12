@@ -31,34 +31,13 @@ function App() {
   };
   useEffect(() => {
     const fetch = async () => {
-      if (query === "ff") {
-        // checking if favorites array is empty or does not exist
-        if (
-          localStorage.getItem("favorites") === "[]" ||
-          !localStorage.getItem("favorites")
-        ) {
-          localStorage.setItem("favorites", "[]");
-          const result = await axios(
-            `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&offset=100`
-          );
-          console.log("a");
-          console.log(result.data.data.results);
-          setItems(result.data.data.results);
-          setLoading(false);
-        } else {
-          let favorite = JSON.parse(localStorage.getItem("favorites"));
-          setItems(favorite);
-          setLoading(false);
-        }
-      } else {
-        const result = await axios(
-          `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&offset=100&limit=30`
-        );
+      const result = await axios(
+        `http://gateway.marvel.com/v1/public/characters?ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&offset=100&limit=30`
+      );
 
-        console.log(result.data.data.results);
-        setItems(result.data.data.results);
-        setLoading(false);
-      }
+      console.log(result.data.data.results);
+      setItems(result.data.data.results);
+      setLoading(false);
     };
 
     fetch();
@@ -66,18 +45,21 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Search search={(q) => setQuery(q)}></Search>
-      <div className="sc-hd-line"></div>
-      <div className="container">
-        <Menu setFilterD={setFilterDMethod} setFilterA={setFilterAMethod} />
-        <CharacterTable
-          items={items}
-          isLoading={isLoading}
-          FilterAsc={filterA}
-          FilterDesc={filterD}
-          // onScroll={() => this.listenScrollEvent()}
-        />
+      <div className="head">
+        <Header />
+        <Search search={(q) => setQuery(q)}></Search>
+      </div>
+      <div className="main">
+        <div className="sc-hd-line"></div>
+        <div className="container">
+          <Menu setFilterD={setFilterDMethod} setFilterA={setFilterAMethod} />
+          <CharacterTable
+            items={items}
+            isLoading={isLoading}
+            FilterAsc={filterA}
+            FilterDesc={filterD}
+          />
+        </div>
       </div>
     </div>
   );

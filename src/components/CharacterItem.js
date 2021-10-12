@@ -1,13 +1,12 @@
 import React from "react";
 
 const CharacterItem = ({ item }) => {
-  const favorite = (item) => {
-    // getting the previous element and adding the new favorite item
-    var previousData = JSON.parse(localStorage.getItem("favorites"));
-    previousData.push(item);
-    localStorage.setItem("favorites", JSON.stringify(previousData));
-  };
-
+  var description = "";
+  if (item.description !== "") {
+    description = item.description;
+  } else {
+    description = "No Description!";
+  }
   return (
     <div className="content">
       <div className="content-inner">
@@ -21,16 +20,7 @@ const CharacterItem = ({ item }) => {
               <strong>Name:</strong> {item.name}
             </li>
             <li>
-              <strong>Description:</strong> {item.description}
-            </li>
-            <li>
-              <button
-                className="favoritbtn"
-                type="button"
-                onClick={() => favorite(item)}
-              >
-                Favorite
-              </button>
+              <strong>Description:</strong> {description}
             </li>
           </ul>
         </div>
