@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import CharacterTable from "./components/CharacterTable";

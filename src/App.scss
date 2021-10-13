@@ -1,0 +1,210 @@
+///Colors
+$Grey: #464545;
+$SoftGrey: #c6c7ca;
+$white: #fff;
+$Yellow: #fcb144;
+$Red: rgb(236, 28, 35);
+
+///Position
+$Left: left;
+$Flex: flex;
+$Center: center;
+$Hidden: hidden;
+$InlineBlok: inline-block;
+$Absolute: absolute;
+$Relative: relative;
+$Box: border-box;
+$Grid: grid;
+$Cover: cover;
+$Block: block;
+
+///Size
+$FontWeight: 700;
+$FullWH: 100%;
+$Auto: auto;
+$FullH: 100vh;
+$NoMarginPadding: 0;
+$SizeTenPix: 10px;
+$SizeTweny: 20px;
+$Radius: 5px;
+
+///Other
+$Pointer: pointer;
+$NoBorder: none;
+$Fonts: Arial, Helvetica, sans-serif;
+
+////////////////////////////////////////////////////////
+
+* {
+  box-sizing: $Box;
+  margin: $NoMarginPadding;
+  padding: $NoMarginPadding;
+}
+
+html,
+body {
+  background: $Grey;
+  height: $FullH;
+  color: $white;
+  font-family: $Fonts;
+}
+
+.head {
+  background-color: $Yellow;
+  .search {
+    bottom: 45px;
+    margin-top: $NoMarginPadding;
+    position: $Relative;
+    input {
+      display: $Block;
+      padding: $SizeTenPix;
+      font-size: $SizeTweny;
+      border-radius: $Radius;
+      width: 70%;
+      margin: $Auto;
+      color: $Grey;
+      border: $NoBorder;
+      outline: $NoMarginPadding;
+    }
+  }
+  .center {
+    display: $Flex;
+    align-items: $Center;
+    justify-content: $Left;
+    height: 80px;
+  }
+  img {
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 30px;
+    opacity: 1;
+  }
+}
+.main {
+  background-color: $Grey;
+
+  .sc-hd-line {
+    background: $SoftGrey;
+    height: 1px;
+    width: $FullWH;
+    margin-bottom: 15px;
+  }
+  .container {
+    max-width: 1100px;
+    margin: $Auto;
+    padding-bottom: 80px;
+
+    .nav {
+      position: $Relative;
+      display: $InlineBlok;
+      color: $white;
+      text-align: $Left;
+      ul {
+        list-style: $NoBorder;
+        padding-left: $NoMarginPadding;
+        margin-top: $NoMarginPadding;
+        margin-bottom: $NoMarginPadding;
+      }
+
+      .nav__menu {
+        line-height: 45px;
+        font-weight: $FontWeight;
+        margin-bottom: 17px;
+
+        .nav__menu-item {
+          display: $InlineBlok;
+          position: $Relative;
+          cursor: $Pointer;
+          margin: $NoMarginPadding 7px;
+          button {
+            padding: 7px 35px;
+            margin-bottom: 5px;
+            border: $NoBorder;
+            background-color: $Yellow;
+            cursor: $Pointer;
+            border-radius: $Radius;
+            color: $Grey;
+            font-weight: $FontWeight;
+          }
+          button:focus-within {
+            background-color: $Red;
+            color: $white;
+          }
+        }
+      }
+    }
+    .contents {
+      position: $Relative;
+      display: $Grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: $NoMarginPadding;
+      .content:hover {
+        .content-inner {
+          transform: rotateY(180deg);
+        }
+      }
+      .content {
+        cursor: $Pointer;
+        height: 300px;
+        .content-inner {
+          position: $Relative;
+          width: $FullWH;
+          height: $FullWH;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+          .content-front {
+            overflow-y: $Hidden;
+            position: $Absolute;
+            width: $FullWH;
+            height: $FullWH;
+            -webkit-backface-visibility: $Hidden;
+            backface-visibility: $Hidden;
+            border-radius: $Radius;
+            img {
+              width: $FullWH;
+              height: 300px;
+              object-fit: $Cover;
+            }
+          }
+          .content-back {
+            background: $Red;
+            color: $white;
+            padding: $SizeTweny;
+            transform: rotateY(180deg);
+            position: $Absolute;
+            width: $FullWH;
+            height: $FullWH;
+            -webkit-backface-visibility: $Hidden;
+            backface-visibility: $Hidden;
+            overflow: $Hidden;
+            overflow-y: $Auto;
+            border-radius: $Radius;
+            h1 {
+              font-size: $SizeTweny;
+              border-bottom: 1px $white dotted;
+              padding-bottom: $SizeTenPix;
+              margin-bottom: $SizeTenPix;
+            }
+            li {
+              list-style: $NoBorder;
+              padding-bottom: $SizeTenPix;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .contents {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .contents {
+    grid-template-columns: 1fr;
+  }
+}

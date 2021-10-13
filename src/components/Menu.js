@@ -5,7 +5,7 @@ const Menu = (props) => {
     <nav className="nav">
       <ul className="nav__menu">
         <li className="nav__menu-item">
-          <p>Filter By : </p>
+          <p>Sort By : </p>
         </li>
         <li className="nav__menu-item">
           <button type="button" onClick={props.setFilterD}>
