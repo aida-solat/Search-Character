@@ -26,7 +26,11 @@ $FullH: 100vh;
 $NoMarginPadding: 0;
 $SizeTenPix: 10px;
 $SizeTweny: 20px;
+$TowHundred: 200px;
 $Radius: 5px;
+$H1Font: 14px;
+$DescFont: 12px;
+$LineH: 17px;
 
 ///Other
 $Pointer: pointer;
@@ -146,12 +150,12 @@ body {
       }
       .content {
         cursor: $Pointer;
-        height: 300px;
+        height: $TowHundred;
         .content-inner {
           position: $Relative;
           width: $FullWH;
           height: $FullWH;
-          transition: transform 0.8s;
+          transition: transform 1.5s;
           transform-style: preserve-3d;
           .content-front {
             overflow-y: $Hidden;
@@ -163,7 +167,7 @@ body {
             border-radius: $Radius;
             img {
               width: $FullWH;
-              height: 300px;
+              height: $TowHundred;
               object-fit: $Cover;
             }
           }
@@ -181,12 +185,14 @@ body {
             overflow-y: $Auto;
             border-radius: $Radius;
             h1 {
-              font-size: $SizeTweny;
+              font-size: $H1Font;
               border-bottom: 1px $white dotted;
               padding-bottom: $SizeTenPix;
               margin-bottom: $SizeTenPix;
             }
             li {
+              font-size: $DescFont;
+              line-height: $LineH;
               list-style: $NoBorder;
               padding-bottom: $SizeTenPix;
             }
