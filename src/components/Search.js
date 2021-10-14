@@ -10,14 +10,16 @@ const Search = ({ search }) => {
 
   return (
     <section className="search">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Find a character"
-        autoFocus
-        onChange={(e) => onSearch(e.target.value)}
-        value={text}
-      />
+      <form>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Find a character"
+          autoFocus
+          onChange={(e) => onSearch(e.target.value)}
+          value={text}
+        />
+      </form>
     </section>
   );
 };

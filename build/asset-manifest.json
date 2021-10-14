@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/marvelapi/static/css/main.b3ff2182.chunk.css",
-    "main.js": "/marvelapi/static/js/main.210c33a1.chunk.js",
-    "main.js.map": "/marvelapi/static/js/main.210c33a1.chunk.js.map",
+    "main.css": "/marvelapi/static/css/main.a82bcaf9.chunk.css",
+    "main.js": "/marvelapi/static/js/main.26f2a382.chunk.js",
+    "main.js.map": "/marvelapi/static/js/main.26f2a382.chunk.js.map",
     "runtime-main.js": "/marvelapi/static/js/runtime-main.46259ee0.js",
     "runtime-main.js.map": "/marvelapi/static/js/runtime-main.46259ee0.js.map",
     "static/js/2.ce2dbb0e.chunk.js": "/marvelapi/static/js/2.ce2dbb0e.chunk.js",
     "static/js/2.ce2dbb0e.chunk.js.map": "/marvelapi/static/js/2.ce2dbb0e.chunk.js.map",
     "index.html": "/marvelapi/index.html",
-    "static/css/main.b3ff2182.chunk.css.map": "/marvelapi/static/css/main.b3ff2182.chunk.css.map",
+    "static/css/main.a82bcaf9.chunk.css.map": "/marvelapi/static/css/main.a82bcaf9.chunk.css.map",
     "static/js/2.ce2dbb0e.chunk.js.LICENSE.txt": "/marvelapi/static/js/2.ce2dbb0e.chunk.js.LICENSE.txt",
     "static/media/marvel-logo.58b8e3c4.png": "/marvelapi/static/media/marvel-logo.58b8e3c4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.46259ee0.js",
     "static/js/2.ce2dbb0e.chunk.js",
-    "static/css/main.b3ff2182.chunk.css",
-    "static/js/main.210c33a1.chunk.js"
+    "static/css/main.a82bcaf9.chunk.css",
+    "static/js/main.26f2a382.chunk.js"
   ]
 }

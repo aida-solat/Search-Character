@@ -31,13 +31,21 @@ function App() {
   };
   useEffect(() => {
     const fetch = async () => {
-      const result = await axios(
-        `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&offset=100&limit=30`
-      );
-
-      console.log(result.data.data.results);
-      setItems(result.data.data.results);
-      setLoading(false);
+      if (query === "") {
+        const result = await axios(
+          `https://gateway.marvel.com/v1/public/characters?ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&offset=100&limit=30`
+        );
+        console.log(result.data.data.results);
+        setItems(result.data.data.results);
+        setLoading(false);
+      } else {
+        const result = await axios(
+          `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=75f68f03fc85ae774bc4fc166d995134&hash=${hash}&limit=30`
+        );
+        console.log(result.data.data.results);
+        setItems(result.data.data.results);
+        setLoading(false);
+      }
     };
 
     fetch();
