@@ -1,6 +1,6 @@
 {
   "homepage": "https://aida-solat.github.io/marvelapi/",
-  "name": "marvel-api",
+  "name": "search-character",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
